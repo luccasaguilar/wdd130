@@ -106,12 +106,119 @@ article {
     color: white; 
 }
 
-.history {
+.history, .contact-information, .team {
     text-align: center;
     background-color: var(--accent2-color);    
     padding: 2rem 1rem; 
     border-radius: 8px;
     margin-top: 2rem;       
+}
+
+.contact-form {
+    background-color: var(--accent2-color);    
+    padding: 2rem 1rem; 
+    border-radius: 8px;
+    margin-top: 2rem;       
+}
+
+.contact-form h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+} 
+
+.contact-information-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    align-items: center;
+    justify-content:space-around;    
+    text-align: left;
+}
+
+.map iframe{
+    border: 0;
+}
+
+.contact-information-grid .map {
+    grid-column: 2;
+    grid-row: 1 / span 3;
+}
+
+.contact-information-grid p {
+    margin: 0 0 10px;
+}
+
+form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+fieldset {
+    border: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.form-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-item input[type="radio"] {
+    margin-right: 5px;
+    align-items: center;
+}
+
+.column1 {
+    grid-column: 1;
+}
+
+.column2 {
+    grid-column: 2;
+}
+
+.radio-group {
+    grid-column: 1 / span 2;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+textarea {
+    width: 100%;
+    resize: vertical;
+}
+
+textarea,
+input[type="text"],
+input[type="email"] {
+    padding: 10px;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+}
+
+.form-item:nth-child(6) {
+    grid-column: 1 / span 2;
+}
+
+button[type="submit"] {
+    margin: 20px auto 0;
+    padding: 10px 20px;
+    display: block;
+    border: 1px solid #666;
+    background: #f3f3f3;
+    color: #f3f3f3;
+    background-color: var(--primary-color);     
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;    
+}
+
+button:hover {
+    background-color: #38a3a5;
 }
 
 .history-grid {
@@ -202,4 +309,10 @@ footer .socialmedia {
 footer .socialmedia img {
     width: 36px;
     height: 36px;
+}
+
+footer a {
+    text-decoration: none;
+    font-weight: bold;
+    color: white;
 }
