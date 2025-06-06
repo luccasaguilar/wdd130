@@ -83,7 +83,7 @@ nav, p, section, article {
     width: 125px;
 }
 
-h1 {
+.hero h1 {
     position: absolute;
     top: 20px;
     width: 100%;
@@ -149,7 +149,7 @@ article {
 }
 
 form {
-    max-width: 600px;
+    max-width: 840px;
     margin: 0 auto;
 }
 
@@ -200,8 +200,18 @@ input[type="email"] {
     border-radius: 5px;
 }
 
-.form-item:nth-child(6) {
+.form-item-message {
     grid-column: 1 / span 2;
+}
+
+.form-checkbox {
+    grid-column: 1 / span 2;
+    display: flex;
+    align-items: center;
+}
+
+.form-checkbox input[type="checkbox"] {
+    margin-right: 10px;
 }
 
 button[type="submit"] {
