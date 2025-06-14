@@ -397,11 +397,6 @@ footer .socialmedia img {
     cursor: pointer;
 }
 
-.cta-button:hover,
-.cta-trips-button:hover {
-    background-color: #e6b800;
-}
-
 .cta-image, .cta-trips-image {
     flex: 1 1 300px;
     text-align: right;
