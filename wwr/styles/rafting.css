@@ -30,8 +30,8 @@ a {
 }
 
 header, main, footer,
-.history, .adventure, .contact-information, .team,
-.contact-form, .trips, .trip-table, .cta-contact {
+.green-block, .blue-block,
+.contact-form, .trip-table {
     width: 840px;
     margin: 0 auto;
 }
@@ -123,7 +123,7 @@ article {
     color: white; 
 }
 
-.contact-information, .team, .trips, .trip-table, .cta-contact, .contact-form, .adventure {
+.green-block, .blue-block, .trip-table, .contact-form {
     background-color: var(--accent2-color);
     padding: 2rem 1rem;
     border-radius: 8px;
@@ -131,7 +131,7 @@ article {
     text-align: center;
 }
 
-.history, .team, .trips {
+.blue-block {
     background-color: var(--primary-color);
     padding: 2rem 1rem;
     border-radius: 8px;
@@ -139,7 +139,7 @@ article {
     text-align: center;
 }
 
-.history h2, .team h2, .trips h2 {
+.blue-block h2 {
     font-family: var(--heading-font);
     color: var(--accent2-color);
     text-shadow: 
@@ -345,10 +345,6 @@ footer .socialmedia {
 footer .socialmedia img {
     width: 36px;
     height: 36px;
-}
-
-footer a {
-    color: white;
 }
 
 .trip-table {
