@@ -18,10 +18,33 @@ body {
     color: var(--accent1-color);
 }
 
+h1, h2 {
+    font-family: var(--heading-font);
+    color: var(--primary-color);
+}
+
+a {
+    text-decoration: none;
+    font-weight: bold;
+    color: inherit;
+}
+
+header, main, footer,
+.history, .adventure, .contact-information, .team,
+.contact-form, .trips, .trip-table, .cta-contact {
+    width: 840px;
+    margin: 0 auto;
+}
+
+nav, p, section, article {
+    margin: 16px;
+    padding: 8px;
+}
+
 header {
     display: grid;
     grid-template-columns: 1fr 2fr;
-    justify-content:space-evenly;
+    justify-content: space-evenly;
     align-items: center;  
     background-color: var(--primary-color);
     height: 150px;
@@ -35,48 +58,30 @@ header {
 header nav {
     display: flex;
     gap: 1rem;
-    justify-content:space-around;
+    justify-content: space-around;
     align-items: center;    
 }
 
 header nav a {
     padding: 0.5rem 1rem;
-    text-decoration: none;
-    font-weight: bold;
     color: white;
-}
-
-header, main, footer, .history, .adventure, .contact-information, .team, .contact-form, .trips, .trip-table, .cta-contact {
-    width: 840px;
-    margin: 0 auto;
-}
-
-h1, h2 {
-    font-family: var(--heading-font);
-    color: var(--primary-color);
-}
-
-nav, p, section, article {
-    margin: 16px;
-    padding: 8px;
 }
 
 .socialmedia a {
     text-decoration: none;
 }
 
-.hero {
+.hero, .hero-home {
     position: relative;
     border-radius: 8px;
     margin-top: 2rem;       
 }
 
-.hero img {
+.hero img, .hero-home img {
     display: block;
     width: 100%;
     height: auto;
 }
-
 
 .hero article img {
     float: right;
@@ -94,10 +99,22 @@ nav, p, section, article {
     color: #fff;
 }
 
+.hero-home h1 {
+    position: absolute;
+    top: 250px;
+    width: 100%;
+    padding: 16px;
+    font-size: 80px;
+    text-align: center;
+    opacity: 0.7;
+    background-color: var(--accent1-color);
+    color: #fff;
+}
+
 article {
     position: absolute;
     display: flex; 
-    justify-content:space-around;
+    justify-content: space-around;
     flex-direction: row-reverse;
     align-items: center;         
     top: 205px;
@@ -106,43 +123,69 @@ article {
     color: white; 
 }
 
-.history, .contact-information, .team, .trips, .trip-table, .cta-contact {
-    text-align: center;
-    background-color: var(--accent2-color);    
-    padding: 2rem 1rem; 
+.contact-information, .team, .trips, .trip-table, .cta-contact, .contact-form, .adventure {
+    background-color: var(--accent2-color);
+    padding: 2rem 1rem;
     border-radius: 8px;
-    margin-top: 2rem;       
+    margin-top: 2rem;
+    text-align: center;
 }
 
-.contact-form {
-    background-color: var(--accent2-color);    
-    padding: 2rem 1rem; 
+.history, .team, .trips {
+    background-color: var(--primary-color);
+    padding: 2rem 1rem;
     border-radius: 8px;
-    margin-top: 2rem;       
+    margin-top: 2rem;
+    text-align: center;
 }
 
-.contact-form h2 {
-    text-align: center;
-    margin-bottom: 2rem;
-} 
+.history h2, .team h2, .trips h2 {
+    font-family: var(--heading-font);
+    color: var(--accent2-color);
+    text-shadow: 
+        -1px -1px 0 black,
+        1px -1px 0 black,
+        -1px  1px 0 black,
+        1px  1px 0 black;      
+}
 
+.contact-form h2,
 .contact-form p {
     text-align: center;
+}
+
+.contact-form p {
     margin-bottom: 2rem;
     font-weight: bold;
 }
 
-.contact-information-grid {
+.contact-information-grid,
+.history-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
     gap: 1rem;
     align-items: center;
-    justify-content:space-around;    
+    justify-content: space-around;
     text-align: left;
 }
 
-.map iframe{
-    border: 0;
+.contact-information-grid {
+    grid-template-columns: 1fr 1fr;
+}
+
+.history-grid {
+    grid-template-columns: repeat(3, 1fr);
+    color: white;
+}
+
+.history-grid-img {
+    display: flex;
+    justify-content: center;
+}
+
+.history-grid img {
+    width: 100%;
+    max-width: 160px;
+    padding: 8px;
 }
 
 .contact-information-grid .map {
@@ -152,6 +195,10 @@ article {
 
 .contact-information-grid p {
     margin: 0 0 10px;
+}
+
+.map iframe {
+    border: 0;
 }
 
 form {
@@ -177,13 +224,8 @@ fieldset {
     align-items: center;
 }
 
-.column1 {
-    grid-column: 1;
-}
-
-.column2 {
-    grid-column: 2;
-}
+.column1 { grid-column: 1; }
+.column2 { grid-column: 2; }
 
 .radio-group {
     grid-column: 1 / span 2;
@@ -193,25 +235,21 @@ fieldset {
     flex-wrap: wrap;
 }
 
-textarea {
-    width: 100%;
-    resize: vertical;
-}
-
 textarea,
 input[type="text"],
 input[type="email"] {
     padding: 10px;
     border: 1px solid #aaa;
     border-radius: 5px;
+    width: 100%;
 }
 
-.form-item-message {
+.form-item-message,
+.form-checkbox {
     grid-column: 1 / span 2;
 }
 
 .form-checkbox {
-    grid-column: 1 / span 2;
     display: flex;
     align-items: center;
 }
@@ -225,45 +263,17 @@ button[type="submit"] {
     padding: 10px 20px;
     display: block;
     border: 1px solid #666;
-    background: #f3f3f3;
+    background-color: var(--primary-color);
     color: #f3f3f3;
-    background-color: var(--primary-color);     
     border-radius: 6px;
     cursor: pointer;
     font-size: 1rem;    
+    transition: background-color 0.3s ease;
+    font-weight: bold;
 }
 
-button:hover {
-    background-color: #38a3a5;
-}
-
-.history-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 1rem;
-    align-items: center;
-    justify-content:space-around;    
-    text-align: left;
-}
-
-.history-grid-img {
-    display: flex;
-    justify-content: center;
-}
-
-
-.history-grid img {
-    width: 100%;
-    max-width: 160px;
-    padding: 8px;
-}
-
-.adventure {
-    padding: 2rem 1rem;
-    text-align: center;
-    background-color: var(--accent2-color);
-    border-radius: 8px;
-    margin-top: 2rem;
+button[type="submit"]:hover {
+    background-color: var(--secondary-color);
 }
 
 .gallery {
@@ -325,12 +335,7 @@ footer {
     flex-wrap: wrap;
 }
 
-.company {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-}
-
+.company,
 footer .socialmedia {
     display: flex;
     align-items: center;    
@@ -343,15 +348,16 @@ footer .socialmedia img {
 }
 
 footer a {
-    text-decoration: none;
-    font-weight: bold;
     color: white;
+}
+
+.trip-table {
+    font-size: 1rem;
 }
 
 .trip-table table {
     width: 100%;
     border-collapse: collapse;
-    font-size: 1rem;
 }
 
 .trip-table h2 {
@@ -364,9 +370,9 @@ footer a {
 }
 
 .trip-table th {
-    background-color: #38a3a5;
+    background-color: var(--secondary-color);
     font-weight: bold;
-    color: white;
+    color: black;
 }
 
 .trip-table tr:nth-child(even) {
@@ -399,7 +405,8 @@ footer a {
     color: #333;
 }
 
-.cta-button {
+.cta-button,
+.cta-trips-button {
     display: inline-block;
     background-color: #ffcc00;
     color: #000;
@@ -408,9 +415,11 @@ footer a {
     text-decoration: none;
     font-weight: bold;
     transition: background-color 0.3s ease;
+    cursor: pointer;
 }
 
-.cta-button:hover {
+.cta-button:hover,
+.cta-trips-button:hover {
     background-color: #e6b800;
 }
 
@@ -419,10 +428,12 @@ footer a {
     text-align: right;
 }
 
-.cta-image img {
+.cta-image img,
+.cta-trips-image img {
     max-width: 100%;
     height: auto;
     border-radius: 12px;
+    display: block;
 }
 
 .cta-gap {
@@ -451,12 +462,6 @@ footer a {
     flex: 1 1 300px;
 }
 
-.cta-trips-image img {
-    width: 100%;
-    border-radius: 12px;
-    display: block;
-}
-
 .cta-trips-text {
     flex: 1 1 400px;
     display: flex;
@@ -475,36 +480,6 @@ footer a {
     font-size: 1.2rem;
     margin-bottom: 30px;
     max-width: 600px;
-}
-
-.cta-trips-button {
-    display: inline-block;
-    align-self: center;
-    background-color: #ffcc00;
-    color: #000;
-    padding: 14px 28px;
-    font-size: 1rem;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-    margin-top: 20px;
-}
-
-.cta-trips-button:hover {
-  background-color: #e6b800;
-}
-
-@media (max-width: 768px) {
-  .cta-trips-content {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .cta-trips-text p {
-    margin-left: auto;
-    margin-right: auto;
-  }
 }
 
 .about-rafting {
@@ -552,4 +527,3 @@ footer a {
     font-size: 1rem;
     color: #333;
 }
-
